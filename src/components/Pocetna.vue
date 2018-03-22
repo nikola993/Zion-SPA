@@ -14,11 +14,16 @@
     <p>Trudimo se da zadovoljimo sve Vase zelje i zahteve, pa tako brinemo da i cne budu vrlo pristupacne.</p>
 
     <p>Vi imate ideju, a mi smo tu da je sprovedemo u delo!</p>
+    <kontakt></kontakt>
   </div>
 </template>
 
 <script>
+import Kontakt from './Kontakt.vue'
 export default {
+  components: {
+    'kontakt': Kontakt
+  },
   name: 'Pocetna',
   data () {
     return {

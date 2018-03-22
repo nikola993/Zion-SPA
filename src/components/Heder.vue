@@ -1,56 +1,61 @@
 <template>
-  <nav class="nav has-shadow">
-    <div class="container" id="nav">
-      <router-link class="nav-item is-tab" to="/Pocetna">
-        <label class="label"> Pocetna </label>
-      </router-link>
-      <div class="dropdown is-hoverable">
-        <div class="dropdown-trigger">
-          <div class="nav-item is-tab" aria-haspopup="true" aria-controls="dropdown-menu4">
-            <label class="label"> Galerija </label>
-          </div>
-        </div>
-        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-          <div class="dropdown-content">
-            <div class="dropdown-item">
-              <router-link class="nav-item is-tab" to="/Galerija/Stolice">
-                <label class="label"> Solice </label>
-              </router-link>
-              <router-link class="nav-item is-tab" to="/Galerija/Stolovi">
-                <label class="label">Stolovi</label>
-              </router-link>
-              <router-link class="nav-item is-tab" to="/Galerija/Brodovi">
-                <label class="label"> Brodovi </label>
-              </router-link>
-            </div>
+  <nav class="navbar is-transparent">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://bulma.io">
+        <img src="../assets/z.jpg" alt="Zion: Izrada namestaja">
+      </a>
+      <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="https://bulma.io/">
+          Home
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="/documentation/overview/start/">
+            Docs
+          </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="/documentation/overview/start/">
+              Overview
+            </a>
+            <a class="navbar-item" href="https://bulma.io/documentation/modifiers/syntax/">
+              Modifiers
+            </a>
+            <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
+              Columns
+            </a>
+            <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
+              Layout
+            </a>
+            <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
+              Form
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
+              Elements
+            </a>
+            <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
+              Components
+            </a>
           </div>
         </div>
       </div>
-      <router-link class="nav-item is-tab" to="/Kontakt">
-        <label class="label"> Kontakt </label>
-      </router-link>
     </div>
   </nav>
 </template>
 
 <script>
 export default {
+
 }
 </script>
 
 <style>
-  .nav.has-shadow {
-    width: 100%;
-    align-content: center;
-  }
-  .container#nav {
-    width: 70%;
-    justify-content: space-evenly;
-  }
-  .dropdown-content {
-    float: left;
-  }
-  .nav-item.is-tab {
-    height: 100%;
-  }
+
 </style>
