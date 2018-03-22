@@ -1,0 +1,3 @@
+<template>
+  <p style="text-align: center;">Page not found</p>
+</template>
