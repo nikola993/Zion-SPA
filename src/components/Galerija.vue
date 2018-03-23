@@ -16,7 +16,7 @@ export default {
       Text: 'Naslov',
       imgStolovi: [ 'https://dummyimage.com/800/ffffff/000000',
         'https://dummyimage.com/1600/ffffff/000000',
-        '../../dist/assets/images/1.jpg',
+        '../assets/z.jpg',
         'https://dummyimage.com/1280/000000/ffffff',
         'https://dummyimage.com/400/000000/ffffff',
         'https://dummyimage.com/1280/000000/ffffff',
