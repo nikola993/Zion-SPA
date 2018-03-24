@@ -1,3 +1,11 @@
 <template>
-  <p style="text-align: center;">Page not found</p>
+  <p id="notFound" class="label">404 Page not found</p>
 </template>
+
+<style>
+  #notFound {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+</style>

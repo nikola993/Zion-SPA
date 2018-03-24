@@ -3,10 +3,10 @@
     <div class="container">
       <div class="content has-text-centered">
         <label class="label"> Follow us </label>
-        <a href="http://google.com" target="blank">OVDE</a>
+        <a href="http://google.com" target="facebook">facebook</a>
+        <a href="http://google.com" target="instagram">instagram</a>
       </div>
     </div>
-      <label class="label" id="allrights"> Sva prava zadržana © 2018 Mare ih zadržava</label>
   </footer>
 </template>
 
@@ -16,13 +16,10 @@ export default {
 </script>
 
 <style>
-  #allrights {
-    text-align: center;
-    font-size: 12px;
-    margin-top: 5px
-  }
   .footer {
+    background-color: whitesmoke;
     display: inline-block;
     width: 100%;
+    padding: 100px 0 100px 0;
   }
 </style>

@@ -23,7 +23,7 @@ export default {
 <style lang="scss">
 @import "~bulma";
 body{
-  margin: 0px
+  margin: 0px;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -31,5 +31,6 @@ body{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  font-weight: 700;
 }
 </style>
