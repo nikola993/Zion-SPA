@@ -3,8 +3,20 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueScrollReveal from 'vue-scroll-reveal'
 
 Vue.config.productionTip = false
+
+// In main.js
+Vue.use(VueScrollReveal)
+
+// You can also pass in default options
+Vue.use(VueScrollReveal, {
+  duration: 800,
+  scale: 1,
+  distance: '10px',
+  mobile: true
+})
 
 /* eslint-disable no-new */
 new Vue({
@@ -12,4 +24,5 @@ new Vue({
   router,
   components: { App },
   template: '<App/>'
+
 })

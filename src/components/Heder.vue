@@ -33,6 +33,9 @@
             </router-link>
           </div>
         </div>
+        <router-link class="navbar-item" to="/Kontakt">
+          Kontakt
+        </router-link>
       </div>
     </div>
   </nav>
@@ -63,7 +66,7 @@ export default {
   #navBar{
     padding-right: 40px;
   }
-  @media only screen and (max-width: 1024px){
+  @media screen and (max-width: 1024px){
     /* setting navbar right with absolute position and on top */
       #navBar {
         width: 200px;

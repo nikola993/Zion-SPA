@@ -64,12 +64,14 @@ export default {
 </script>
 
 <style>
-  .image {
-    width: 200px;
-    height: 300px;
-    margin: 10px 10px 10px 10px;
+  .image{
+    width: 300px;
+    height: 200px;
     float: left;
-
+    background-size: cover;
+    background-position: center center;
+    border: 1px solid #ebebeb;
+    margin: 5px;
   }
   #galeryHead{
     margin-top: 10px;

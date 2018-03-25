@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <label class="label"> Follow us </label>
+        <label class="label"> Pratite nas </label>
         <a href="http://google.com" target="facebook">facebook</a>
         <a href="http://google.com" target="instagram">instagram</a>
       </div>
