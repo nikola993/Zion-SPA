@@ -18,12 +18,12 @@
             Pocetna
           </router-link>
         </div>
-        <div class="navbar-item has-dropdown is-hoverable">
+        <div class="navbar-item has-dropdown is-hoverable" @click="gallery">
           <a class="navbar-item">
             Galerija
           </a>
           <hr class="navbar-divider">
-          <div class="navbar-dropdown is-boxed">
+          <div class="navbar-dropdown is-boxed" v-bind:class="{ 'active': activate }">
             <div @click="makeBurger" class="navbar-item">
               <router-link to="/Galerija/Stolovi" class="navbar-item">
                 Stolovi
@@ -57,14 +57,18 @@ export default {
   name: 'Navbar',
   data () {
     return {
-      activator: false
+      activator: false,
+      activate: true
     }
   },
   methods: {
     makeBurger () {
-      console.log('klik')
       this.activator = !this.activator
       return this.activator
+    },
+    gallery () {
+      this.activate = !this.activate
+      return this.activate
     }
   }
 }
@@ -81,7 +85,7 @@ export default {
   a.navbar-item.is-active{
     background-color: white;
   }
-  @media screen and (max-width: 1024px){
+  @media screen and (max-width: 1025px){
     /* setting navbar right with absolute position and on top */
       #navBar {
         width: 200px;
@@ -93,6 +97,9 @@ export default {
       .navbar-divider {
         display: block;
         margin: 0;
+      }
+      .active{
+        display: none;
       }
 }
 </style>
