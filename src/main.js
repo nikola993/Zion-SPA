@@ -4,11 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueScrollReveal from 'vue-scroll-reveal'
+import VueResource from 'vue-resource'
 
 Vue.config.productionTip = false
 
 // In main.js
 Vue.use(VueScrollReveal)
+Vue.use(VueResource)
 
 // You can also pass in default options
 Vue.use(VueScrollReveal, {

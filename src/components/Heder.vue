@@ -13,29 +13,40 @@
 
     <div id="navBar" class="navbar-menu" v-bind:class="{ 'is-active': activator }">
       <div class="navbar-end">
-        <router-link class="navbar-item" to="/Pocetna">
-          Pocetna
-        </router-link>
+        <div @click="makeBurger" class="navbar-item">
+          <router-link to="/Pocetna" class="navbar-item">
+            Pocetna
+          </router-link>
+        </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-item">
             Galerija
           </a>
           <hr class="navbar-divider">
           <div class="navbar-dropdown is-boxed">
-            <router-link class="navbar-item" to="/Galerija/Stolovi">
-              Stolovi
-            </router-link>
-            <router-link class="navbar-item" to="/Galerija/Stolice">
-              Stolice
-            </router-link>
-            <router-link class="navbar-item" to="/Galerija/Brodovi">
-              Brodovi
-            </router-link>
+            <div @click="makeBurger" class="navbar-item">
+              <router-link to="/Galerija/Stolovi" class="navbar-item">
+                Stolovi
+              </router-link>
+            </div>
+            <div @click="makeBurger" class="navbar-item">
+              <router-link to="/Galerija/Stolice" class="navbar-item">
+                Stolice
+              </router-link>
+            </div>
+            <div @click="makeBurger" class="navbar-item">
+              <router-link to="/Galerija/Brodovi" class="navbar-item">
+                Brodovi
+              </router-link>
+            </div>
           </div>
         </div>
-        <router-link class="navbar-item" to="/Kontakt">
-          Kontakt
-        </router-link>
+        <hr class="navbar-divider">
+        <div @click="makeBurger" class="navbar-item">
+          <router-link to="/Kontakt" class="navbar-item">
+            Kontakt
+          </router-link>
+        </div>
       </div>
     </div>
   </nav>
@@ -51,6 +62,7 @@ export default {
   },
   methods: {
     makeBurger () {
+      console.log('klik')
       this.activator = !this.activator
       return this.activator
     }
@@ -65,6 +77,9 @@ export default {
   }
   #navBar{
     padding-right: 40px;
+  }
+  a.navbar-item.is-active{
+    background-color: white;
   }
   @media screen and (max-width: 1024px){
     /* setting navbar right with absolute position and on top */

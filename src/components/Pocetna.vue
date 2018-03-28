@@ -10,7 +10,7 @@
     </div>
     <div id="content">
       <div id="upper-div-text">
-        <p id="upper-text" v-scroll-reveal.reset="{ delay: 350 }">
+        <p class="block-text" v-scroll-reveal.reset="{ delay: 350 }">
           Rucna izrada i pazljiv odabir materjala daju poseban pecat svakom nasem proizvodu,
           i cine ga jedinstvenim i prepoznatljivim
         </p>
@@ -18,7 +18,7 @@
       <div id="upper-img">
       </div>
       <div id="bottom-div-text">
-        <section id="bottom-text" v-scroll-reveal.reset="{ delay: 350 }">
+        <section class="block-text" v-scroll-reveal.reset="{ delay: 350 }">
         <p>Pored velikog izbora svih vrsta namestaja, postoji i mogucnost izrade bilo
         kog komada namestaja po Vasem ukusu i merama</p>
         </section>
@@ -27,12 +27,14 @@
       </div>
       <div style="clear:both;"></div>
     </div>
-    <section v-scroll-reveal.reset="{ delay: 350 }">
-    <div id="last-text">
-      <p>Trudimo se da zadovoljimo sve Vase zelje i zahteve, pa tako brinemo da i cene budu vrlo pristupacne</p>
-      <p>Vi imate ideju, a mi smo tu da je sprovedemo u delo!</p>
+    <div id="last-div-text">
+      <section class="block-text" v-scroll-reveal.reset="{ delay: 350 }">
+        <p style="text-align: center">Trudimo se da zadovoljimo sve Vase zelje i zahteve,
+          pa tako brinemo da i cene budu vrlo pristupacne <br>
+          Vi imate ideju, a mi smo tu da je sprovedemo u delo!
+        </p>
+      </section>
     </div>
-    </section>
   </div>
 </template>
 
@@ -70,10 +72,11 @@ export default {
     display: table;
     float: left;
   }
-  #upper-text{
+  .block-text{
     display: table-cell;
     vertical-align: middle;
     text-align: center;
+    padding: 0 20px 0 20px;
   }
   #upper-img{
     background-image: url("../assets/wood-types.png");
@@ -90,21 +93,30 @@ export default {
     display: table;
     float: right;
   }
-  #bottom-text{
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    }
   #bottom-img{
     height: 300px;
     background-color: black;
     width: 50%;
     float: left;
   }
-  #last-text{
-    padding: 130px 3% 130px 3%
+  #last-div-text{
+    display: table;
+    height: 300px;
+    text-align: center;
+    width: 100%;
   }
-  @media screen and (max-width: 1024px){
-
+  @media screen and (max-width: 640px){
+    #upper-div-text{
+      width: 100%;
+    }
+    #upper-img{
+      width: 100%;
+    }
+    #bottom-div-text{
+       width: 100%;
+    }
+    #bottom-img{
+       width: 100%;
+    }
   }
 </style>

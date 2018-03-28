@@ -1,28 +1,28 @@
 <template>
 <div class="contact">
-  <div class="contact info">
+  <div class="contact info" v-scroll-reveal.reset>
     <label class="label" id="contact_text">Marko Aksentijević, Mnogo zajeban tip</label>
     <label class="label" id="contact_text">Testerise za sve pare</label>
     <label class="label" id="contact_text">neka brojka da se cujete</label>
     <label class="label" id="contact_text">neka slova da se cujete</label>
   </div>
-  <form id="contact_form"  v-on:submit.prevent="submitForm" action="">
+  <form id="contact_form"  v-on:submit.prevent="submitForm" v-scroll-reveal.reset="{ delay: 350 }">
     <div class="form-group">
-      <label class="label" for="name">Name:</label>
+      <label class="label" for="name">Ime i prezime:</label>
       <!-- v-model link to the model (i.e. pieces of the data section of vue.js) -->
       <!-- v-on lets us run methods from vue.js : this one is v-on:blur for the blur event -->
       <!--    blur just means that the field no longer has 'focus' -->
       <input v-model="name" v-on:blur="isValidName" class="input" name="name" type="text" />
     </div>
     <div class="form-group">
-      <label class="label" for="email">Email</label>
+      <label class="label" for="email">Email:</label>
       <input v-model="email" v-on:blur="isValidEmail" class="input" name="email" type="email" />
     </div>
     <div class="form-group">
-      <label class="label" for="message">Message <small>(<span>{{ message.length }}</span> / <span>{{ maxLength }}</span>)</small></label>
+      <label class="label" for="message">Poruka:</label>
       <textarea v-model="message" v-on:blur="isValidMessage" class="textarea" name="message"></textarea>
     </div>
-    <button type="submit" class="button is-primary">Send</button>
+    <button type="submit" id="button-send" class="button is-primary">Posalji</button>
 </form>
 </div>
 </template>
@@ -34,7 +34,7 @@ export default {
       name: '', // data for the name on the form
       email: '', // data for the email on the form
       message: '', // data for the message on the form
-      maxLength: 140 // maximum length of the form message
+      maxLength: 550 // maximum length of the form message
     }
   },
   methods: { // all the actions our app can do
@@ -57,24 +57,23 @@ export default {
     checkMessage: function () {
       // TODO keep the message below maxMessageLength?
       //      or maybe change the text, background, or counter color?
+      var valid = this.message.indexOf('@') > 0
+      console.log('checking for a valid email: ' + valid)
+      return valid
     },
     submitForm: function () {
       // TODO prevent form from submitting if name, email, or message
       //      are invalid and display message
       // TODO submit to form processor
       console.log('submitting message...')
-      this.$http({
-        url: 'localhost:3000',
-        method: 'POST',
-        data: {
-          name: this.name,
-          email: this.email,
-          message: this.message
-        }}).then(function () {
-        // alert('Your form was submitted!')
-      }, function () {
-        // alerts('Form submission failed')
-      })
+      var contact = {
+        name: this.name,
+        email: this.email,
+        message: this.message
+      }
+      this.$http.post('/send', contact)
+        .then((res) => alert('Poruka je poslata'))
+        .catch((error) => console.log(error))
     }
   }
 }
@@ -96,5 +95,12 @@ export default {
   #contact_text{
     text-align: center;
     margin-top: 5px;
+  }
+  #button-send{
+    margin: 10px;
+  }
+  .button.is-primary{
+    background-color: black;
+    width: 100px;
   }
 </style>
