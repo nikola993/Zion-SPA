@@ -1,16 +1,16 @@
-var express = require('express');
-var path = require('path');
-var serveStatic = require('serve-static');
+var express = require('express')
+var path = require('path')
+var serveStatic = require('serve-static')
 var fs = require('fs')
 
 var indexHTML = (() => {
   return fs.readFileSync(path.resolve(__dirname + "/dist", './index.html'), 'utf-8')
 })()
 
-app = express();
-app.use(serveStatic(__dirname + "/dist"));
+app = express()
+app.use(serveStatic(__dirname + "/dist"))
 
-var bodyParser = require('body-parser');
+var bodyParser = require('body-parser')
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
@@ -19,9 +19,9 @@ app.get('*', (req, res) => {
   res.end()
 })
 
-var port = process.env.PORT || 3000;
-app.listen(port);
-console.log('server started '+ port);
+var port = process.env.PORT || 3000
+app.listen(port)
+console.log('server started '+ port)
 
 var nodemailer = require('nodemailer')
 

@@ -3,7 +3,7 @@
     <div class="container">
       <div class="content has-text-centered">
         <label class="label"> Pratite nas </label>
-        <a href="http://google.com" target="facebook">facebook</a>
+        <a href="https://www.facebook.com/ZION-Namestaj-430950967343208/?modal=admin_todo_tour" target="facebook">facebook</a>
         <a href="http://google.com" target="instagram">instagram</a>
       </div>
     </div>

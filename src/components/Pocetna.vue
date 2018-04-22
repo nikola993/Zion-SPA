@@ -53,7 +53,7 @@ export default {
   #welcome{
     background-image: url("../assets/bgTop.jpg");
     background-size: cover;
-    height: 300px;
+    height: 320px;
   }
   #welcome .label {
     color: whitesmoke;

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="gallery-container">
     <label class="label" id="galleryHead" v-text="Text" v-scroll-reveal.reset></label>
     <gallery :images="images" :index="index" @close="index = null"></gallery>
     <div class="image" v-for="(image, imageIndex) in images" :key="imageIndex" v-scroll-reveal.reset
@@ -86,8 +86,5 @@ export default {
     margin-top: 10px;
     margin-left: 10px;
     font-size: 24px;
-  }
-  #gallery-container{
-    align-content: center;
   }
 </style>
