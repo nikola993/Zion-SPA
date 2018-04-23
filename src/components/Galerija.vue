@@ -3,7 +3,8 @@
     <label class="label" id="galleryHead" v-text="Text" v-scroll-reveal.reset></label>
     <gallery :images="images" :index="index" @close="index = null"></gallery>
     <div class="image" v-for="(image, imageIndex) in images" :key="imageIndex" v-scroll-reveal.reset
-      @click="index = imageIndex" :style="{ backgroundImage: 'url(' + image + ')' }"></div>
+      @click="index = imageIndex" :style="{ backgroundImage: 'url(' + image + ')' }">
+      </div>
   </div>
 </template>
 
@@ -15,13 +16,11 @@ export default {
       id: this.$route.params.id,
       Text: 'Naslov',
       imgStolovi: [
-        'https://dummyimage.com/800/ffffff/000000',
-        'https://dummyimage.com/1600/ffffff/000000',
-        '../assets/z.jpg',
-        'https://dummyimage.com/1280/000000/ffffff',
-        'https://dummyimage.com/400/000000/ffffff',
-        'https://dummyimage.com/1280/000000/ffffff',
-        'https://dummyimage.com/400/000000/ffffff'
+        '/static/Galery/ostalo1.jpg',
+        '/static/Galery/ostalo2.jpg',
+        '/static/Galery/ostalo3.jpg',
+        '/static/Galery/ostalo4.jpg',
+        '/static/Galery/sto1.jpg'
       ],
       imgBrodovi: [
         'https://dummyimage.com/1600/ffffff/000000',
@@ -31,7 +30,13 @@ export default {
         'https://dummyimage.com/1280/000000/ffffff',
         'https://dummyimage.com/400/000000/ffffff'
       ],
-      images: [],
+      images: [
+        '/static/Galery/ostalo1.jpg',
+        '/static/Galery/ostalo2.jpg',
+        '/static/Galery/ostalo3.jpg',
+        '/static/Galery/ostalo4.jpg',
+        '/static/Galery/sto1.jpg'
+      ],
       index: null
     }
   },
@@ -42,7 +47,9 @@ export default {
 
   methods: {
     loadImg () {
-      switch (this.id) {
+      this.Text = 'Galerija'
+      this.images = this.images
+      /*  switch (this.id) {
         case 'Stolovi':
           this.Text = this.id
           this.images = this.imgStolovi
@@ -55,7 +62,7 @@ export default {
           this.Text = this.id
           this.images = this.imgStolice
           break
-      }
+      } */
     }
   },
 

@@ -14,7 +14,11 @@ export default new Router({
   routes: [
     { path: '/Pocetna', name: 'Pocetna', component: Pocetna },
     { path: '/Kontakt', name: 'Kontakt', component: Kontakt },
-    { path: '/Galerija/:id', name: 'Galerija', component: Galerija },
+    //  { path: '/Galerija/:id', name: 'Galerija', component: Galerija },
+
+    //  obrisi ovaj red za opcije u navigaciju
+    { path: '/Galerija', name: 'Galerija', component: Galerija },
+
     { path: '/', redirect: '/Pocetna' },
     { path: '*', component: NotFound }
   ]

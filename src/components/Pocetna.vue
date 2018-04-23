@@ -26,14 +26,14 @@
       <div id="bottom-img">
       </div>
       <div style="clear:both;"></div>
-    </div>
-    <div id="last-div-text">
-      <section class="block-text" v-scroll-reveal.reset="{ delay: 350 }">
-        <p style="text-align: center">Trudimo se da zadovoljimo sve Vase zelje i zahteve,
-          pa tako brinemo da i cene budu vrlo pristupacne <br>
-          Vi imate ideju, a mi smo tu da je sprovedemo u delo!
-        </p>
-      </section>
+      <div id="last-div-text">
+        <section class="block-text" v-scroll-reveal.reset="{ delay: 350 }">
+          <p style="text-align: center">Trudimo se da zadovoljimo sve Vase zelje i zahteve,
+            pa tako brinemo da i cene budu vrlo pristupacne <br>
+            Vi imate ideju, a mi smo tu da je sprovedemo u delo!
+          </p>
+        </section>
+      </div>
     </div>
   </div>
 </template>
@@ -53,7 +53,7 @@ export default {
   #welcome{
     background-image: url("../assets/bgTop.jpg");
     background-size: cover;
-    height: 320px;
+    height: 350px;
   }
   #welcome .label {
     color: whitesmoke;
@@ -66,7 +66,7 @@ export default {
     padding: 0 30px 0 30px;
   }
   #upper-div-text{
-    height: 300px;
+    height: 350px;
     text-align: center;
     width: 50%;
     display: table;
@@ -79,23 +79,24 @@ export default {
     padding: 0 20px 0 20px;
   }
   #upper-img{
-    background-image: url("../assets/wood-types.png");
+    background-image: url("../assets/objects_woodloops.jpg");
     background-size:cover;
-    height: 300px;
+    height: 350px;
     padding: 0 30px 0 30px;
     width: 50%;
     float: right;
   }
   #bottom-div-text{
-    height: 300px;
+    height: 350px;
     text-align: center;
     width: 50%;
     display: table;
     float: right;
   }
   #bottom-img{
-    height: 300px;
-    background-color: black;
+    background-image: url("../assets/wood-types.png");
+    background-size:cover;
+    height: 350px;
     width: 50%;
     float: left;
   }

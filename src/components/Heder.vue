@@ -18,6 +18,13 @@
             Pocetna
           </router-link>
         </div>
+        <!-- obrisi ovu galeriju za opcije -->
+        <div @click="makeBurger" class="navbar-item">
+          <router-link to="/Galerija" class="navbar-item">
+            Galerija
+          </router-link>
+        </div>
+        <!--
         <div class="navbar-item has-dropdown is-hoverable" @click="gallery">
           <a class="navbar-item">
             Galerija
@@ -42,6 +49,7 @@
           </div>
         </div>
         <hr class="navbar-divider">
+        -->
         <div @click="makeBurger" class="navbar-item">
           <router-link to="/Kontakt" class="navbar-item">
             Kontakt
