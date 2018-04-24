@@ -20,7 +20,13 @@ export default {
         '/static/Galery/ostalo2.jpg',
         '/static/Galery/ostalo3.jpg',
         '/static/Galery/ostalo4.jpg',
-        '/static/Galery/sto1.jpg'
+        '/static/Galery/ostalo5.jpg',
+        '/static/Galery/ostalo6.jpg',
+        '/static/Galery/ostalo7.jpg',
+        '/static/Galery/ostalo8.jpg',
+        '/static/Galery/sto1.jpg',
+        '/static/Galery/sto2.jpg',
+        '/static/Galery/sto3.jpg'
       ],
       imgBrodovi: [
         'https://dummyimage.com/1600/ffffff/000000',
@@ -35,7 +41,13 @@ export default {
         '/static/Galery/ostalo2.jpg',
         '/static/Galery/ostalo3.jpg',
         '/static/Galery/ostalo4.jpg',
-        '/static/Galery/sto1.jpg'
+        '/static/Galery/ostalo5.jpg',
+        '/static/Galery/ostalo6.jpg',
+        '/static/Galery/ostalo7.jpg',
+        '/static/Galery/ostalo8.jpg',
+        '/static/Galery/sto1.jpg',
+        '/static/Galery/sto2.jpg',
+        '/static/Galery/sto3.jpg'
       ],
       index: null
     }
