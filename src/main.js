@@ -21,13 +21,6 @@ Vue.use(VueScrollReveal, {
 })
 
 /* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
-})
-
 const root = new Vue({
   el: '#app',
   router,
