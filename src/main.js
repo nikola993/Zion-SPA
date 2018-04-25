@@ -26,5 +26,15 @@ new Vue({
   router,
   components: { App },
   template: '<App/>'
+})
 
+const root = new Vue({
+  el: '#app',
+  router,
+  components: { App },
+  template: '<App/>'
+})
+
+document.addEventListener('DOMContentLoaded', function () {
+  root.$mount('#app')
 })
