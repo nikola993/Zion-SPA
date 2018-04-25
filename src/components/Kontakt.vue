@@ -75,6 +75,16 @@ export default {
         .then((res) => alert('Poruka je poslata'))
         .catch((error) => console.log(error))
     }
+  },
+  metaInfo: {
+    titleTemplate: 'Zion - Izrada namestaja i predmeta od drveta',
+    link: [
+      { rel: 'canonical', href: 'https://zion-namestaj.herokuapp.com/kontakt' },
+      { rel: 'favicon', href: '/static/Logo/logo.png' }
+    ],
+    meta: [
+      { name: 'description', content: 'kontak stranica za slanje poruke i pro' }
+    ]
   }
 }
 </script>
