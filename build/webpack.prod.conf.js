@@ -12,8 +12,8 @@ const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
 const glob = require('glob-all')
-const PrerenderSPAPlugin = require('prerender-spa-plugin')
-const PuppeteerRenderer = PrerenderSPAPlugin.PuppeteerRenderer
+//const PrerenderSPAPlugin = require('prerender-spa-plugin')
+//const PuppeteerRenderer = PrerenderSPAPlugin.PuppeteerRenderer
 
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -133,15 +133,10 @@ const webpackConfig = merge(baseWebpackConfig, {
         path.join(__dirname, '../node_modules/blueimp-gallery/js/*.js')
       ])
     }),
-    new PrerenderSPAPlugin({
+  /*  new PrerenderSPAPlugin({
       staticDir: path.join(__dirname, '../dist'),
       routes: [ '/pocetna', '/galerija', '/kontakt' ],
 
-      postProcess (renderedRoute) {
-        // Ignore any redirects.
-        renderedRoute.path = renderedRoute.originalPath
-        return renderedRoute
-      },
       minify: {
         collapseBooleanAttributes: true,
         collapseWhitespace: true,
@@ -150,7 +145,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         sortAttributes: true
       },
       renderer: new PuppeteerRenderer()
-    }),
+    }),*/
   ]
 })
 
