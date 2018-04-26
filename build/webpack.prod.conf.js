@@ -137,6 +137,11 @@ const webpackConfig = merge(baseWebpackConfig, {
       staticDir: path.join(__dirname, '../dist'),
       routes: [ '/pocetna', '/galerija', '/kontakt' ],
 
+      postProcess (renderedRoute) {
+        // Ignore any redirects.
+        renderedRoute.path = renderedRoute.originalPath
+        return renderedRoute
+      },
       minify: {
         collapseBooleanAttributes: true,
         collapseWhitespace: true,

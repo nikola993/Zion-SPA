@@ -3,14 +3,10 @@ var path = require('path')
 var serveStatic = require('serve-static')
 var fs = require('fs')
 var app = express();
-
 var redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
 
 // Don't redirect if the hostname is `localhost:port` or the route is `/insecure`
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301));
-app.use(require('express-naked-redirect')({
-  reverse: true
-}))
 
 var indexHTML = (() => {
   return fs.readFileSync(path.resolve(__dirname + "/dist", './index.html'), 'utf-8')
