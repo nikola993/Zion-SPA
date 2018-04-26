@@ -2,13 +2,14 @@ var express = require('express')
 var path = require('path')
 var serveStatic = require('serve-static')
 var fs = require('fs')
+var gzipStatic = require('connect-gzip-static');
 
 var indexHTML = (() => {
   return fs.readFileSync(path.resolve(__dirname + "/dist", './index.html'), 'utf-8')
 })()
 
 app = express()
-app.use(serveStatic(__dirname + "/dist"))
+app.use(gzipStatic(__dirname + "/dist"))
 
 var bodyParser = require('body-parser')
 app.use(bodyParser.json()); // support json encoded bodies

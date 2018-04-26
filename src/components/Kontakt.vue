@@ -6,17 +6,17 @@
     <label class="label" id="contact_text">neka brojka da se cujete</label>
     <label class="label" id="contact_text">neka slova da se cujete</label>
   </div>
-  <form id="contact_form"  v-on:submit.prevent="submitForm" v-scroll-reveal.reset="{ delay: 350 }">
+  <form id="contact_form" v-on:submit.prevent="submitForm" v-scroll-reveal.reset="{ delay: 350 }">
     <div class="form-group">
       <label class="label" for="name">Ime i prezime:</label>
       <!-- v-model link to the model (i.e. pieces of the data section of vue.js) -->
       <!-- v-on lets us run methods from vue.js : this one is v-on:blur for the blur event -->
       <!--    blur just means that the field no longer has 'focus' -->
-      <input v-model="name" v-on:blur="isValidName" class="input" name="name" type="text" />
+      <input v-model="name" v-on:blur="isValidName" autocomplete="name" class="input" name="name" type="text" />
     </div>
     <div class="form-group">
       <label class="label" for="email">Email:</label>
-      <input v-model="email" v-on:blur="isValidEmail" class="input" name="email" type="email" />
+      <input v-model="email" v-on:blur="isValidEmail" class="input" autocomplete="email" name="email" type="email" />
     </div>
     <div class="form-group">
       <label class="label" for="message">Poruka:</label>

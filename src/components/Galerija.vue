@@ -3,8 +3,7 @@
     <label class="label" id="galleryHead" v-text="Text" v-scroll-reveal.reset></label>
     <gallery :images="images" :index="index" @close="index = null"></gallery>
     <div class="image" v-for="(image, imageIndex) in images" :key="imageIndex" v-scroll-reveal.reset
-      @click="index = imageIndex" :style="{ backgroundImage: 'url(' + image + ')' }">
-      </div>
+      @click="index = imageIndex" :style="{ backgroundImage: 'url(' + image + ')' }"></div>
   </div>
 </template>
 
@@ -15,27 +14,9 @@ export default {
     return {
       id: this.$route.params.id,
       Text: 'Naslov',
-      imgStolovi: [
-        '/static/Galery/ostalo1.jpg',
-        '/static/Galery/ostalo2.jpg',
-        '/static/Galery/ostalo3.jpg',
-        '/static/Galery/ostalo4.jpg',
-        '/static/Galery/ostalo5.jpg',
-        '/static/Galery/ostalo6.jpg',
-        '/static/Galery/ostalo7.jpg',
-        '/static/Galery/ostalo8.jpg',
-        '/static/Galery/sto1.jpg',
-        '/static/Galery/sto2.jpg',
-        '/static/Galery/sto3.jpg'
-      ],
-      imgBrodovi: [
-        'https://dummyimage.com/1600/ffffff/000000',
-        'https://dummyimage.com/1280/000000/ffffff'
-      ],
-      imgStolice: [
-        'https://dummyimage.com/1280/000000/ffffff',
-        'https://dummyimage.com/400/000000/ffffff'
-      ],
+      imgStolovi: [],
+      imgBrodovi: [],
+      imgStolice: [],
       images: [
         '/static/Galery/ostalo1.jpg',
         '/static/Galery/ostalo2.jpg',
@@ -54,7 +35,6 @@ export default {
   },
 
   metaInfo: {
-    name: 'Galerija',
     titleTemplate: 'Zion - Izrada namestaja i predmeta od drveta',
     link: [
       { rel: 'canonical', href: 'https://zion-namestaj.herokuapp.com/galerija' },

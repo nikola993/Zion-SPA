@@ -3,8 +3,6 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
-const PrerenderSPAPlugin = require('prerender-spa-plugin')
-const PuppeteerRenderer = PrerenderSPAPlugin.PuppeteerRenderer
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -90,20 +88,5 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
-  },
-  plugins: [
-    new PrerenderSPAPlugin({
-      staticDir: path.join(__dirname, '../dist'),
-      routes: [ '/Pocetna', '/Galerija', '/Kontakt' ],
-
-      minify: {
-        collapseBooleanAttributes: true,
-        collapseWhitespace: true,
-        decodeEntities: true,
-        keepClosingSlash: true,
-        sortAttributes: true
-      },
-      renderer: new PuppeteerRenderer()
-    })
-  ]
+  }
 }
