@@ -22,7 +22,6 @@
     "express-http-to-https": "^1.1.4",
     "express-naked-redirect": "^0.1.2",
     "nodemailer": "^4.6.3",
-    "prerender-node": "^3.1.1",
     "prerender-spa-plugin": "^3.1.0",
     "scrollreveal": "^3.4.0",
     "vue": "^2.5.2",
