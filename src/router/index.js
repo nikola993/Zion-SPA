@@ -13,13 +13,14 @@ export default new Router({
   mode: 'history',
   linkActiveClass: 'is-active',
   scrollBehavior: (to, from, savedPosition) => ({ y: 0 }),
+  caseSensitive: '',
   routes: [
-    { path: '/pocetna', name: 'Pocetna', component: Pocetna },
-    { path: '/kontakt', name: 'Kontakt', component: Kontakt },
+    { path: '/pocetna', name: 'pocetna', component: Pocetna },
+    { path: '/kontakt', name: 'kontakt', component: Kontakt },
     //  { path: '/galerija/:id', name: 'Galerija', component: Galerija },
 
     //  obrisi ovaj red za opcije u navigaciju
-    { path: '/galerija', name: 'Galerija', component: Galerija },
+    { path: '/galerija', name: 'galerija', component: Galerija },
 
     { path: '/', redirect: '/pocetna' },
     { path: '*', component: NotFound }
