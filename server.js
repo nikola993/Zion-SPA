@@ -2,9 +2,12 @@ var express = require('express')
 var path = require('path')
 var serveStatic = require('serve-static')
 var fs = require('fs')
-var app = express();
 var redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
+var helmet = require('helmet')
 
+var app = express()
+
+app.use(helmet())
 
 // Don't redirect if the hostname is `localhost:port` or the route is `/insecure`
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301));
