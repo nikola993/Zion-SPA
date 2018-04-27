@@ -5,7 +5,7 @@
         <h1 class="label">Dobrodosli u Zion</h1>
       </section>
       <section v-scroll-reveal.reset="{ delay: 350 }">
-      <p class="label" id="dobrodosli">Mesto na kojem mozete naci najkvalitetniju uslugu izrade namestaja</p>
+      <h2 class="label" id="dobrodosli">Mesto na kojem mozete naci najkvalitetniju uslugu izrade namestaja</h2>
       </section>
     </div>
     <div id="content">

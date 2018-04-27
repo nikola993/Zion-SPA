@@ -12,6 +12,14 @@ app.use(helmet())
 // Don't redirect if the hostname is `localhost:port` or the route is `/insecure`
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301));
 
+app.get('/*', function(req, res, next) {
+  if (req.headers.host.match(/^www/) !== null ) {
+    res.redirect('https://' + req.headers.host.replace(/^www\./, '') + req.url);
+  } else {
+    next();
+  }
+})
+
 var indexHTML = (() => {
   return fs.readFileSync(path.resolve(__dirname + "/dist", './index.html'), 'utf-8')
 })()
