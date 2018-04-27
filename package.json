@@ -20,7 +20,6 @@
     "connect-gzip-static": "^2.1.1",
     "express": "^4.16.3",
     "express-http-to-https": "^1.1.4",
-    "express-naked-redirect": "^0.1.2",
     "helmet": "^3.12.0",
     "nodemailer": "^4.6.3",
     "prerender-spa-plugin": "^3.1.0",
