@@ -121,6 +121,11 @@ const webpackConfig = merge(baseWebpackConfig, {
         from: path.resolve(__dirname, '../static'),
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
+      },
+      {
+        from: path.resolve(__dirname, '../sw.js'),
+        to: path.resolve(__dirname, '../dist/'),
+        toType: 'dir'
       }
     ]),
     new PurgecssPlugin({

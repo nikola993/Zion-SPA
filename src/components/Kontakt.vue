@@ -73,7 +73,7 @@ export default {
       }
       this.$http.post('/send', contact)
         .then((res) => alert('Poruka je poslata'))
-        .catch((error) => console.log(error), alert ('Poruka nije poslata'))
+        .catch((error) => console.log(error), alert('Poruka nije poslata'))
     }
   },
   metaInfo: {
