@@ -9,9 +9,6 @@
   <form id="contact_form"  v-on:submit.prevent="submitForm" v-scroll-reveal.reset="{ delay: 350 }">
     <div class="form-group">
       <label class="label" for="name">Ime i prezime:</label>
-      <!-- v-model link to the model (i.e. pieces of the data section of vue.js) -->
-      <!-- v-on lets us run methods from vue.js : this one is v-on:blur for the blur event -->
-      <!--    blur just means that the field no longer has 'focus' -->
       <input v-model="name" v-on:blur="isValidName" class="input" name="name" type="text" />
     </div>
     <div class="form-group">
@@ -73,7 +70,7 @@ export default {
       }
       this.$http.post('/send', contact)
         .then((res) => alert('Poruka je poslata'))
-        .catch((error) => console.log(error))
+        .catch((error) => console.log(error), alert ('Poruka nije poslata'))
     }
   }
 }
