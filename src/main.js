@@ -21,10 +21,13 @@ Vue.use(VueScrollReveal, {
 })
 
 /* eslint-disable no-new */
-new Vue({
+const root = new Vue({
   el: '#app',
   router,
   components: { App },
   template: '<App/>'
+})
 
+document.addEventListener('DOMContentLoaded', function () {
+  root.$mount('#app')
 })

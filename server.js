@@ -2,30 +2,19 @@ var express = require('express')
 var path = require('path')
 var serveStatic = require('serve-static')
 var fs = require('fs')
+var helmet = require('helmet')
+var app = express()
 
-var indexHTML = (() => {
-  return fs.readFileSync(path.resolve(__dirname + "/dist", './index.html'), 'utf-8')
-})()
-
-app = express()
+app.use(helmet())
 app.use(serveStatic(__dirname + "/dist"))
 
 var bodyParser = require('body-parser')
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
-app.get('*', (req, res) => {
-  res.write(indexHTML)
-  res.end()
-})
-
-var port = process.env.PORT || 3000
-app.listen(port)
-console.log('server started '+ port)
-
 var nodemailer = require('nodemailer')
 
-app.post('/send',  (req, res) => {
+app.post('/send', (req, res) => {
   var message = `
   <h3>Gospodine Aksentijevicu dobili ste novu poruku</h3>
   <p>Ime: ${req.body.name}</p>
@@ -67,3 +56,7 @@ app.post('/send',  (req, res) => {
     })
   })
 })
+
+var port = process.env.PORT || 3000
+app.listen(port)
+console.log('server started '+ port)

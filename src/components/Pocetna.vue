@@ -5,7 +5,7 @@
         <h1 class="label">Dobrodosli u Zion</h1>
       </section>
       <section v-scroll-reveal.reset="{ delay: 350 }">
-      <p class="label" id="dobrodosli">Mesto na kojem mozete naci najkvalitetniju uslugu izrade namestaja</p>
+      <h2 class="label" id="dobrodosli">Mesto na kojem mozete naci najkvalitetniju uslugu izrade namestaja</h2>
       </section>
     </div>
     <div id="content">
@@ -45,6 +45,16 @@ export default {
     return {
       id: this.$route.params.id
     }
+  },
+  metaInfo: {
+    titleTemplate: 'Zion - Izrada namestaja i predmeta od drveta',
+    link: [
+      { rel: 'canonical', href: 'https://zion-namestaj.herokuapp.com/pocetna' },
+      { rel: 'shortcut icon', type: 'image/x-icon', href: '/static/Logo/logo.png' }
+    ],
+    meta: [
+      { name: 'description', content: 'pocetna strana preduzeca Zion koje se bavi izradom namestaja i predmeta od drveta po pristupacnim cenama' }
+    ]
   }
 }
 </script>
