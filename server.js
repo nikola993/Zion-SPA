@@ -1,12 +1,13 @@
 var express = require('express')
 var path = require('path')
 var serveStatic = require('serve-static')
+var gzipStatic = require('connect-gzip-static');
 var fs = require('fs')
 var helmet = require('helmet')
 var app = express()
 
 app.use(helmet())
-app.use(serveStatic(__dirname + "/dist"))
+app.use(gzipStatic(__dirname + '/dist'))
 
 var bodyParser = require('body-parser')
 app.use(bodyParser.json()); // support json encoded bodies

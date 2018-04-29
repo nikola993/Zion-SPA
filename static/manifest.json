@@ -8,8 +8,8 @@
   "theme_color": "#bf8e82",
   "display": "fullscreen",
   "icons": [{
-    "src": "/static/Logo/z-splash.png",
-    "sizes": "600x598",
+    "src": "Logo/z-splash.png",
+    "sizes": "512x512 144x144 64x64 32x32 24x24 16x16",
     "type": "image/png"
   }]
 }
