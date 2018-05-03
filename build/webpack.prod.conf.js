@@ -126,6 +126,11 @@ const webpackConfig = merge(baseWebpackConfig, {
         from: path.resolve(__dirname, '../sw.js'),
         to: path.resolve(__dirname, '../dist/'),
         toType: 'dir'
+      },
+      {
+        from: path.resolve(__dirname, '../robots.txt'),
+        to: path.resolve(__dirname, '../dist/'),
+        toType: 'dir'
       }
     ]),
     new PurgecssPlugin({
