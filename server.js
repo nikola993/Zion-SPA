@@ -9,13 +9,10 @@ var app = express()
 app.use(helmet())
 app.get('*', function(req, res, next) {
   if (req.headers.host.match(/^www/) !== null ) {
-    res.redirect(301, 'http://' + req.headers.host.replace(/^www\./, '') + req.url)
+    res.redirect(301, 'https://' + req.headers.host.replace(/^www\./, '') + req.url)
   } else {
     next()
   }
-})
-app.get('*', function(req, res) {
-  res.redirect(301, 'https://' + req.headers.host + req.url)
 })
 
 app.use(gzipStatic(__dirname + '/dist'))
