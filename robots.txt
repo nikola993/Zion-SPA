@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /build/
 Disallow: /config/
 Disallow: /test/
-Sitemap: https://www.my-site.com/sitemap.xml
+Sitemap: https://zion-namestaj.herokuapp.com/sitemap.xml

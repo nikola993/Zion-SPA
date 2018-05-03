@@ -1,8 +1,8 @@
 var CACHE_NAME = 'zion-cache-v1'
 var urlsToCache = [
   'index.html',
-  '/static/css/app.06952dff894f7c889470203162b7d1f9.css',
-  '/static/js/app.9a306bf2c06261776832.js',
+  '/static/css/app.css',
+  '/static/js/app.js',
 ]
 
 self.addEventListener('install', function(event) {
