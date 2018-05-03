@@ -7,13 +7,6 @@ var helmet = require('helmet')
 var app = express()
 
 app.use(helmet())
-app.get('*', function(req, res, next) {
-  if (req.headers.host.match(/^www/) !== null ) {
-    res.redirect(301, 'https://' + req.headers.host.replace(/^www\./, '') + req.url)
-  } else {
-    next()
-  }
-})
 
 app.use(gzipStatic(__dirname + '/dist'))
 
