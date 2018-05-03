@@ -124,10 +124,24 @@ export default {
       width: 100%;
     }
     #bottom-div-text{
-       width: 100%;
+      width: 100%;
     }
     #bottom-img{
-       width: 100%;
+      width: 100%;
     }
   }
+  @media only screen and (min-width: 1100px){
+    #upper-div-text{
+      height: 450px;
+    }
+    #upper-img{
+      height: 450px;
+    }
+    #bottom-div-text{
+      height: 450px;
+    }
+    #bottom-img{
+      height: 450px;
+    }
+   }
 </style>

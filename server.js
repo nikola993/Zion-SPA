@@ -1,12 +1,23 @@
 var express = require('express')
 var path = require('path')
 var serveStatic = require('serve-static')
-var gzipStatic = require('connect-gzip-static');
+var gzipStatic = require('connect-gzip-static')
 var fs = require('fs')
 var helmet = require('helmet')
 var app = express()
 
 app.use(helmet())
+app.get('*', function(req, res, next) {
+  if (req.headers.host.match(/^www/) !== null ) {
+    res.redirect(301, 'http://' + req.headers.host.replace(/^www\./, '') + req.url)
+  } else {
+    next()
+  }
+})
+app.get('*', function(req, res) {
+  res.redirect(301, 'https://' + req.headers.host + req.url)
+})
+
 app.use(gzipStatic(__dirname + '/dist'))
 
 var bodyParser = require('body-parser')
