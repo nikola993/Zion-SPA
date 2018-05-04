@@ -19,15 +19,15 @@ app.use (function (req, res, next) {
 })*/
   app.use (function (req, res, next) {
   if (req.headers.host !== 'localhost:3000') {
-    var https = 'https://'
-    var urlNormal = normalizeUrl(req.headers.host + req.url)
     if (req.protocol === 'https' && urlNormal === req.headers.host + req.url) {
       next()
     } else {
+      var https = 'https://'
+      var urlNormal = normalizeUrl(req.headers.host + req.url)
       console.log('redirected')
       res.redirect(301, https + urlNormal) }
   }
-  else next()
+  else { next() }
   })
 app.use(helmet())
 app.use(gzipStatic(__dirname + '/dist'))
