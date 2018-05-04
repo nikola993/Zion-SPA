@@ -36,10 +36,6 @@ export default {
 
   metaInfo: {
     titleTemplate: 'Zion - Izrada namestaja i predmeta od drveta',
-    link: [
-      { rel: 'canonical', href: 'https://zion-namestaj.herokuapp.com/galerija' },
-      { rel: 'shortcut icon', type: 'image/x-icon', href: '/static/Logo/logo.png' }
-    ],
     meta: [
       { name: 'description', content: 'Galerija slika razlicitih namestaja i ostalih predmeta od drveta' }
     ]

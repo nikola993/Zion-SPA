@@ -34,7 +34,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
   plugins: [
-    // http://vuejs.github.io/vue-loader/en/workflow/production.html .[chunkhash]
+    // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
       'process.env': env
     }),
@@ -150,7 +150,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
   new PrerenderSPAPlugin({
       staticDir: path.join(__dirname, '../dist'),
-      routes: [ '/pocetna/', '/galerija/', '/kontakt/' ],
+      routes: [ '/pocetna', '/galerija', '/kontakt' ],
 
       minify: {
         collapseBooleanAttributes: true,

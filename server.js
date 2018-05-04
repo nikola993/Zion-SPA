@@ -5,9 +5,31 @@ var gzipStatic = require('connect-gzip-static')
 var fs = require('fs')
 var helmet = require('helmet')
 var app = express()
-
+var normalizeUrl = require('normalize-url');
+/*
+app.use (function (req, res, next) {
+  var urlNormal = normalizeUrl(req.headers.host + req.url)
+  if (req.protocol === 'https') {
+      console.log(req.protocol, req.secure);
+      next();
+  } else {
+      console.log('redirected')
+      res.redirect(301, 'https://' + urlNormal)
+  }
+})*/
+  app.use (function (req, res, next) {
+  if (req.headers.host !== 'localhost:3000') {
+    var https = 'https://'
+    var urlNormal = normalizeUrl(req.headers.host + req.url)
+    if (req.protocol === 'https' && urlNormal === req.headers.host + req.url) {
+      next()
+    } else {
+      console.log('redirected')
+      res.redirect(301, https + urlNormal) }
+  }
+  else next()
+  })
 app.use(helmet())
-
 app.use(gzipStatic(__dirname + '/dist'))
 
 var bodyParser = require('body-parser')
