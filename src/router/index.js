@@ -22,7 +22,6 @@ export default new Router({
     //  obrisi ovaj red za opcije u navigaciju
     { path: '/galerija', name: 'galerija', component: Galerija },
     { path: '/', redirect: '/pocetna' },
-    { path: '/index.html', redirect: '/pocetna' },
     { path: '*', component: NotFound }
   ]
 })
