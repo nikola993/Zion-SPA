@@ -7,7 +7,6 @@ var helmet = require('helmet')
 var app = express()
 
 app.use(helmet())
-
 app.use(gzipStatic(__dirname + '/dist'))
 
 var bodyParser = require('body-parser')
