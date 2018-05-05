@@ -15,15 +15,13 @@ export default new Router({
   scrollBehavior: (to, from, savedPosition) => ({ y: 0 }),
   caseSensitive: '',
   routes: [
-    { path: '/pocetna', name: 'pocetna', component: Pocetna },
-    { path: '/kontakt', name: 'kontakt', component: Kontakt },
+    { path: '/pocetna/', name: 'pocetna', component: Pocetna },
+    { path: '/kontakt/', name: 'kontakt', component: Kontakt },
     //  { path: '/galerija/:id', name: 'Galerija', component: Galerija },
 
     //  obrisi ovaj red za opcije u navigaciju
-    { path: '/galerija', name: 'galerija', component: Galerija },
-    { path: '/', redirect: '/pocetna' },
-    { path: '/index.html', redirect: '/pocetna' },
-    { path: '/index.php', redirect: '/pocetna' },
+    { path: '/galerija/', name: 'galerija', component: Galerija },
+    { path: '/', redirect: '/pocetna/' },
     { path: '*', component: NotFound }
   ]
 })
