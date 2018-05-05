@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar is-transparent">
     <div class="navbar-brand">
-      <router-link class="navbar-item" id="logolink" to="/pocetna/">
-        <img src="../assets/z.png" alt="Zion: Izrada namestaja">
+      <router-link class="navbar-item" id="logolink" to="/pocetna">
+        <img src= "/static/Logo/z-splash.png" alt="Zion: Izrada namestaja" title="Zion">
       </router-link>
       <div @click="makeBurger" class="navbar-burger burger" data-target="navBar" v-bind:class="{ 'is-active': activator }">
         <span></span>
@@ -14,13 +14,13 @@
     <div id="navBar" class="navbar-menu" v-bind:class="{ 'is-active': activator }">
       <div class="navbar-end">
         <div @click="makeBurger" class="navbar-item">
-          <router-link to="/pocetna/" class="navbar-item">
+          <router-link to="/pocetna" class="navbar-item">
             Pocetna
           </router-link>
         </div>
         <!-- obrisi ovu galeriju za opcije -->
         <div @click="makeBurger" class="navbar-item">
-          <router-link to="/galerija/" class="navbar-item">
+          <router-link to="/galerija" class="navbar-item">
             Galerija
           </router-link>
         </div>
@@ -51,7 +51,7 @@
         <hr class="navbar-divider">
         -->
         <div @click="makeBurger" class="navbar-item">
-          <router-link to="/kontakt/" class="navbar-item">
+          <router-link to="/kontakt" class="navbar-item">
             Kontakt
           </router-link>
         </div>

@@ -1,6 +1,6 @@
 <template>
   <div id="gallery-container">
-    <label class="label" id="galleryHead" v-text="Text" v-scroll-reveal.reset></label>
+    <h1 class="label" id="galleryHead" v-text="Text" v-scroll-reveal.reset></h1>
     <gallery :images="images" :index="index" @close="index = null"></gallery>
     <div class="image" v-for="(image, imageIndex) in images" :key="imageIndex" v-scroll-reveal.reset
       @click="index = imageIndex" :style="{ backgroundImage: 'url(' + image + ')' }"></div>
@@ -37,11 +37,10 @@ export default {
   metaInfo: {
     titleTemplate: 'Zion - Izrada namestaja i predmeta od drveta',
     link: [
-      { rel: 'canonical', href: 'https://zion-namestaj.herokuapp.com/galerija' },
       { rel: 'shortcut icon', type: 'image/x-icon', href: '/static/Logo/logo.png' }
     ],
     meta: [
-      { name: 'description', content: 'Galerija slika razlicitih namestaja i ostalih predmeta od drveta' }
+      { name: 'description', content: 'Galerija slika gde se mogu naci razlicite vrste namestaja i ostalih predmeta od drveta' }
     ]
   },
 

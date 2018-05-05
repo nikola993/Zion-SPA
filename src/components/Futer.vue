@@ -4,10 +4,10 @@
       <div class="content has-text-centered">
         <label class="label"> Pratite nas </label>
         <a href="https://www.facebook.com/ZION-Namestaj-430950967343208/?modal=admin_todo_tour" target="facebook">
-          <img :src= faceImage alt="facebook logo">
+          <img :src= faceImage alt="facebook logo" title="facebook">
         </a>
         <a href="http://google.com" target="instagram">
-          <img :src= instaImage alt="instagram logo">
+          <img :src= instaImage alt="instagram logo" title="instagram">
         </a>
       </div>
     </div>

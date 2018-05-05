@@ -79,11 +79,10 @@ export default {
   metaInfo: {
     titleTemplate: 'Zion - Izrada namestaja i predmeta od drveta',
     link: [
-      { rel: 'canonical', href: 'https://zion-namestaj.herokuapp.com/kontakt' },
       { rel: 'shortcut icon', type: 'image/x-icon', href: '/static/Logo/logo.png' }
     ],
     meta: [
-      { name: 'description', content: 'kontak stranica za slanje poruke i pro' }
+      { name: 'description', content: 'Kontak stranica za bilo kakvu vrstu komunikacije slanjem poruke preko forme ili preko kontakt telefona i mail-a' }
     ]
   }
 }

@@ -4,7 +4,11 @@ var serveStatic = require('serve-static')
 var gzipStatic = require('connect-gzip-static')
 var fs = require('fs')
 var helmet = require('helmet')
+var nodemailer = require('nodemailer')
+var redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
 var app = express()
+
+app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301))
 
 app.use(helmet())
 app.use(gzipStatic(__dirname + '/dist'))
@@ -12,8 +16,6 @@ app.use(gzipStatic(__dirname + '/dist'))
 var bodyParser = require('body-parser')
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
-
-var nodemailer = require('nodemailer')
 
 app.post('/send', (req, res) => {
   var message = `
