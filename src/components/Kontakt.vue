@@ -1,10 +1,10 @@
 <template>
 <div class="contact">
+  <h1 class="label">Uskoro...</h1>
   <div class="contact info" v-scroll-reveal.reset>
-    <label class="label" id="contact_text">Marko Aksentijević, Mnogo zajeban tip</label>
-    <label class="label" id="contact_text">Testerise za sve pare</label>
-    <label class="label" id="contact_text">neka brojka da se cujete</label>
-    <label class="label" id="contact_text">neka slova da se cujete</label>
+    <label class="label" id="contact_text">Marko Aksentijević</label>
+    <label class="label" id="contact_text">Broj telefona:</label>
+    <label class="label" id="contact_text">E-mail adresa:</label>
   </div>
   <form id="contact_form" v-on:submit.prevent="submitForm" v-scroll-reveal.reset="{ delay: 350 }">
     <div class="form-group">
