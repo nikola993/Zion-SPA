@@ -16,13 +16,13 @@
         </p>
       </div>
       <div id="upper-img"></div>
-      <div id="bottom-img"></div>
       <div id="bottom-div-text">
         <section class="block-text" v-scroll-reveal.reset="{ delay: 350 }">
         <p>Pored velikog izbora svih vrsta namestaja, postoji i mogucnost izrade bilo
         kog komada namestaja po Vasem ukusu i merama</p>
         </section>
       </div>
+      <div id="bottom-img"></div>
       <div style="clear:both;"></div>
       <div id="last-div-text">
         <section class="block-text" v-scroll-reveal.reset="{ delay: 350 }">

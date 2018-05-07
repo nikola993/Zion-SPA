@@ -14,6 +14,8 @@ const PurgecssPlugin = require('purgecss-webpack-plugin')
 const glob = require('glob-all')
 const PrerenderSPAPlugin = require('prerender-spa-plugin')
 const PuppeteerRenderer = PrerenderSPAPlugin.PuppeteerRenderer
+const CompressionPlugin = require("compression-webpack-plugin")
+
 
 const env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -161,14 +163,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       },
       renderer: new PuppeteerRenderer()
     }),
-  ]
-})
-
-if (config.build.productionGzip) {
-  const CompressionWebpackPlugin = require('compression-webpack-plugin')
-
-  webpackConfig.plugins.push(
-    new CompressionWebpackPlugin({
+    new CompressionPlugin({
       asset: '[path].gz[query]',
       algorithm: 'gzip',
       test: new RegExp(
@@ -179,9 +174,8 @@ if (config.build.productionGzip) {
       threshold: 10240,
       minRatio: 0.8
     })
-  )
-}
-
+  ]
+})
 if (config.build.bundleAnalyzerReport) {
   const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
