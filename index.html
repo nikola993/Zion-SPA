@@ -1,13 +1,17 @@
 <html lang="sr">
-  <head>
-      <!-- Global site tag (gtag.js) - Google Analytics-->
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118331822-1"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'UA-118331822-1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-118331822-1');
     </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -15,26 +19,28 @@
     <link rel="shortcut icon" href="/static/Logo/logo.png">
     <link rel="apple-touch-icon" href="/static/Logo/logo.png">
     <link rel="icon" type="image/png" href="/static/Logo/logo.png">
-    <link rel="mask-icon" href="/static/Logo/logo.png"git>
-    <meta name="theme-color" content="#bf8e82"/>
+    <link rel="mask-icon" href="/static/Logo/logo.png" git>
+    <meta name="theme-color" content="#bf8e82" />
     <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>static/manifest.json">
-    <link rel="canonical" href= "https://zion-namestaj.herokuapp.com/pocetna/">
-  </head>
-  <body>
+    <link rel="canonical" href="https://zion-namestaj.tk/pocetna/">
+</head>
+
+<body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
     <script>
         if ('serviceWorker' in navigator) {
-          window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/sw.js').then(function(registration) {
-          // Registration was successful
-          console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }, function(err) {
-          // registration failed :(
-        console.log('ServiceWorker registration failed: ', err);
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                });
             });
-          });
         }
-      </script>
-  </body>
+    </script>
+</body>
+
 </html>

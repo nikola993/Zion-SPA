@@ -8,9 +8,9 @@ var nodemailer = require('nodemailer')
 var redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
 var app = express()
 
+app.use(helmet())
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301))
 
-app.use(helmet())
 app.use(gzipStatic(__dirname + '/dist'))
 
 var bodyParser = require('body-parser')
