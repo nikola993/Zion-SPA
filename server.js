@@ -1,24 +1,21 @@
-var express = require('express')
-var path = require('path')
-var serveStatic = require('serve-static')
-var gzipStatic = require('connect-gzip-static')
-var fs = require('fs')
-var helmet = require('helmet')
-var nodemailer = require('nodemailer')
-var redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
-var app = express()
+const express = require('express')
+const gzipStatic = require('connect-gzip-static')
+const helmet = require('helmet')
+const nodemailer = require('nodemailer')
+const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
+const app = express()
 
 app.use(helmet())
 app.use(redirectToHTTPS([/localhost:(\d{4})/], [/\/insecure/], 301))
 
 app.use(gzipStatic(__dirname + '/dist'))
 
-var bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 app.post('/send', (req, res) => {
-  var message = `
+  const message = `
   <h3>Gospodine Aksentijevicu dobili ste novu poruku</h3>
   <p>Ime: ${req.body.name}</p>
   <p>Email: ${req.body.email}<p>
@@ -39,7 +36,7 @@ app.post('/send', (req, res) => {
 
     // setup email data with unicode symbols
     let mailOptions = {
-      from: '"Zion" <foo@example.com>', // sender address
+      from: '"Zion"', // sender address
       to: 'foo@example.com', // list of receivers
       subject: 'Nova poruka', // Subject line
       html: message // html body
@@ -60,6 +57,6 @@ app.post('/send', (req, res) => {
   })
 })
 
-var port = process.env.PORT || 3000
+const port = process.env.PORT || 3000
 app.listen(port)
 console.log('server started '+ port)
