@@ -64,8 +64,7 @@ export default {
         imagePath + '42' + imageExtention,
         imagePath + '43' + imageExtention,
         imagePath + '44' + imageExtention,
-        imagePath + '45' + imageExtention,
-        imagePath + '46' + imageExtention
+        imagePath + '45' + imageExtention
       ],
       index: null
     }
