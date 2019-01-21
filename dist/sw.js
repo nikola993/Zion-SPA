@@ -1,5 +1,5 @@
-var CACHE_NAME = 'zion-cache-v1'
-var urlsToCache = [
+const CACHE_NAME = 'zion-cache-v1'
+const urlsToCache = [
   'index.html',
   '/static/css/app.css',
   '/static/js/app.js',

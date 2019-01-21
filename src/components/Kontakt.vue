@@ -1,6 +1,6 @@
 <template>
 <div class="contact">
-  <h1 class="label">Uskoro...</h1>
+  <h1 class="label"></h1>
   <div class="contact info" v-scroll-reveal.reset>
     <label class="label" id="contact_text">Marko Aksentijević</label>
     <label class="label" id="contact_text">Broj telefona: 064/2930426</label>
@@ -39,41 +39,34 @@ export default {
   },
   methods: { // all the actions our app can do
     isValidName: function () { // TODO what if name is just spaces?
-      var valid = this.name.length > 0
-      console.log('checking for a valid name: ' + valid)
-      return valid
+      return this.name.length > 0
     },
     isValidEmail: function () { // TODO is a@b a valid email?
-      var valid = this.email.indexOf('@') > 0
-      console.log('checking for a valid email: ' + valid)
-      return valid
+      return this.email.indexOf('@') > 0
     },
     isValidMessage: function () { // what is message is just spaces?
-      var valid = (this.message.length > 0) &&
+      return (this.message.length > 0) &&
         (this.message.length < this.maxLength)
-      console.log('checking for a valid message: ' + valid)
-      return valid
     },
     checkMessage: function () {
       // TODO keep the message below maxMessageLength?
       //      or maybe change the text, background, or counter color?
-      var valid = this.message.indexOf('@') > 0
-      console.log('checking for a valid email: ' + valid)
-      return valid
+      return this.message.indexOf('@') > 0
     },
     submitForm: function () {
       // TODO prevent form from submitting if name, email, or message
       //      are invalid and display message
       // TODO submit to form processor
-      console.log('submitting message...')
-      var contact = {
-        name: this.name,
-        email: this.email,
-        message: this.message
+      if (this.isValidName() && this.isValidEmail() && this.isValidMessage()) {
+        const contact = {
+          name: this.name,
+          email: this.email,
+          message: this.message
+        }
+        this.$http.post('/send', contact)
+          .then((res) => alert(res.body))
+          .catch(() => alert('Poruka nije poslata'))
       }
-      this.$http.post('/send', contact)
-        .then((res) => alert('Poruka je poslata'))
-        .catch((error) => console.log(error), alert('Poruka nije poslata'))
     }
   },
   metaInfo: {
@@ -97,6 +90,7 @@ export default {
   .contact {
     align-content: center;
     margin-bottom: 40px;
+    margin-top: 100px;
   }
   .contact.info{
     margin-top: 40px;
